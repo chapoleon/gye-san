@@ -104,12 +104,12 @@ footer a:hover{color:var(--ac)}
 
 .bn-img{display:block;margin:20px 0;border-radius:var(--rl);overflow:hidden;text-decoration:none;box-shadow:var(--sh);transition:all var(--tr);position:relative}
 .bn-img:hover{box-shadow:var(--shl);transform:translateY(-2px)}
-.bn-img img{width:100%;height:200px;object-fit:cover;object-position:center 75%;display:block}
-.bn-img .bn-ov{position:absolute;bottom:0;left:0;right:0;padding:18px 22px;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+.bn-img img{width:100%;height:220px;object-fit:cover;object-position:center 65%;display:block}
+.bn-img .bn-ov{position:absolute;top:0;left:0;right:0;padding:16px 20px;background:linear-gradient(rgba(0,0,0,.72),transparent)}
 .bn-img .bn-ov h3{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:3px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
 .bn-img .bn-ov p{color:rgba(255,255,255,.88);font-size:.82rem}
 .bn-img .bn-tag{position:absolute;top:12px;right:12px;background:#059669;color:#fff;padding:5px 14px;border-radius:20px;font-size:.73rem;font-weight:700;letter-spacing:.02em}
-@media(max-width:600px){.bn-img img{height:160px;object-position:center 70%}}
+@media(max-width:600px){.bn-img img{height:180px;object-position:center 65%}}
 </style></head><body><nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo"><span>gye</span>-san</a><div class="nav-links"><a href="/">🏠 홈</a><a href="/military/">🎖️ 전역일</a><a href="/unemployment/">💼 실업급여</a><a href="/salary/">💰 실수령액</a><a href="/insurance/" class="active">🧮 4대보험</a><a href="/vat/">🧾 부가세</a><a href="/acquisition-tax/">🏠 취득세</a><a href="/severance/">📦 퇴직금</a><a href="/hourly/">⏰ 시급</a></div></div></nav><div class="w"><header class="ani"><div class="badge"><span class="dot"></span>gye-san.com · 무료 온라인 도구</div><h1><span class="ac">4대보험 계산기</span></h1><p class="sub">2026년 최신 요율 적용 · 월급만 입력하세요</p></header>
 <div class="ad ani d1"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5440243063519453" data-ad-slot="1111111111" data-ad-format="horizontal" data-full-width-responsive="true"></ins></div>
 <main class="card ani d2"><div class="fg"><div><label for="sal">월급여 (세전, 원)</label><input type="text" id="sal" placeholder="3,000,000" inputmode="numeric" autofocus></div><button class="btn" onclick="calc()">🧮 계산하기</button></div><div class="sg" id="result" style="display:none"><div class="si"><div class="sv ac" id="r1">0</div><div class="sl">국민연금 (4.5%)</div></div><div class="si"><div class="sv" id="r2">0</div><div class="sl">건강보험 (3.545%)</div></div><div class="si"><div class="sv" id="r3">0</div><div class="sl">장기요양 (건보의 12.95%)</div></div><div class="si"><div class="sv" id="r4">0</div><div class="sl">고용보험 (0.9%)</div></div><div class="si"><div class="sv ac" id="r5">0</div><div class="sl">근로자 부담 합계</div></div><div class="si"><div class="sv" id="r6">0</div><div class="sl">예상 실수령액</div></div></div></main>
