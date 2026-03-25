@@ -101,17 +101,26 @@ footer a:hover{color:var(--ac)}
 @media(max-width:600px){.w{padding:0 14px}header{padding:32px 0 14px}.card{padding:20px}.sg{grid-template-columns:repeat(2,1fr)}.rg{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}.hero-tools{grid-template-columns:1fr}.nav-links a{font-size:.72rem;padding:4px 8px}}
 @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .ani{animation:fu .5s ease forwards;opacity:0}.d1{animation-delay:.1s}.d2{animation-delay:.15s}
+
+.bn-img{display:block;margin:20px 0;border-radius:var(--rl);overflow:hidden;text-decoration:none;box-shadow:var(--sh);transition:all var(--tr);position:relative}
+.bn-img:hover{box-shadow:var(--shl);transform:translateY(-2px)}
+.bn-img img{width:100%;height:180px;object-fit:cover;display:block}
+.bn-img .bn-ov{position:absolute;bottom:0;left:0;right:0;padding:18px 22px;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+.bn-img .bn-ov h3{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:3px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.bn-img .bn-ov p{color:rgba(255,255,255,.88);font-size:.82rem}
+.bn-img .bn-tag{position:absolute;top:12px;right:12px;background:#059669;color:#fff;padding:5px 14px;border-radius:20px;font-size:.73rem;font-weight:700;letter-spacing:.02em}
+@media(max-width:600px){.bn-img img{height:140px}}
 </style></head><body><nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo"><span>gye</span>-san</a><div class="nav-links"><a href="/">🏠 홈</a><a href="/military/" class="active">🎖️ 전역일</a><a href="/unemployment/">💼 실업급여</a><a href="/salary/">💰 실수령액</a><a href="/insurance/">🧮 4대보험</a><a href="/vat/">🧾 부가세</a><a href="/acquisition-tax/">🏠 취득세</a><a href="/severance/">📦 퇴직금</a><a href="/hourly/">⏰ 시급</a></div></div></nav><div class="w"><header class="ani"><div class="badge"><span class="dot"></span>gye-san.com · 무료 온라인 도구</div><h1><span class="ac">전역일 계산기</span></h1><p class="sub">입대일 입력 → 전역일·복무율·남은 일수</p></header>
 <div class="ad ani d1"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5440243063519453" data-ad-slot="1111111111" data-ad-format="horizontal" data-full-width-responsive="true"></ins></div>
 <main class="card ani d2"><div class="fg"><div class="fg fg2"><div><label>입대일</label><input type="date" id="enlistDate" autofocus></div><div><label>군종</label><select id="branch"><option value="18">육군 (18개월)</option><option value="20">해군 (20개월)</option><option value="21">공군 (21개월)</option><option value="18">해병대 (18개월)</option></select></div></div><button class="btn" onclick="calc()">🎖️ 전역일 계산</button></div><div class="sg" id="result" style="display:none"><div class="si"><div class="sv ac" id="r1">-</div><div class="sl">전역일</div></div><div class="si"><div class="sv" id="r2">0</div><div class="sl">남은 일수</div></div><div class="si"><div class="sv" id="r3">0%</div><div class="sl">복무 진행률</div></div><div class="si"><div class="sv" id="r4">0</div><div class="sl">복무한 일수</div></div></div><div id="pw" style="display:none;margin-top:14px;background:var(--bg3);border-radius:8px;overflow:hidden;height:10px;border:1px solid var(--bd)"><div id="pb" style="height:100%;background:linear-gradient(90deg,var(--ac),var(--grn));border-radius:8px;transition:width .6s;width:0%"></div></div></main>
-<a class="bn" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><div class="bi pink"><span class="bico">🎁</span><div class="bt"><h3>전역 선물 인기 1위 — 온다숲 우롱차 고체 탈취제</h3><p>군생활 고생한 그 사람에게, 향기로운 일상을 선물하세요</p></div><span class="bcta">선물 보기 →</span></div></a>
+<a class="bn-img" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><img src="/img/ondasoop.png" alt="온다숲 고체 탈취제"><div class="bn-tag">전역 선물 1위</div><div class="bn-ov"><h3>전역 선물로 딱 — 온다숲 고체 탈취제</h3><p>군생활 고생한 그 사람에게, 향기로운 일상을 선물하세요</p></div></a>
 <div class="ad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5440243063519453" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
 <div class="faq"><h2>자주 묻는 질문</h2><div class="fi"><div class="fq">2026년 군 복무기간은?</div><div class="fa">육군/해병대 18개월, 해군 20개월, 공군 21개월입니다.</div></div>
 <div class="fi"><div class="fq">전역일 계산법은?</div><div class="fa">입대일 + 복무기간(개월) - 1일 = 전역일입니다.</div></div>
 <div class="fi"><div class="fq">사회복무요원 복무기간은?</div><div class="fa">21개월입니다. 공군(21개월)을 선택하면 됩니다.</div></div>
 <div class="fi"><div class="fq">복무 단축은 어떻게 반영하나요?</div><div class="fa">모범 복무 등의 단축은 부대마다 다르므로 계산에서 제외됩니다. 참고용으로 활용해주세요.</div></div>
 <div class="fi"><div class="fq">전역일이 주말이면?</div><div class="fa">전역일이 토요일이면 금요일, 일요일이면 금요일에 전역합니다.</div></div></div>
-<a class="bn" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><div class="bi green"><span class="bico">🏠</span><div class="bt"><h3>자취방 냄새, 전역하자마자 해결</h3><p>원룸·고시원 특화 천연 탈취제. 놓는 순간 달라집니다</p></div><span class="bcta">구경하기 →</span></div></a>
+<a class="bn-img" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><img src="/img/ondasoop.png" alt="온다숲 고체 탈취제"><div class="bn-tag">자취 필수템</div><div class="bn-ov"><h3>자취방 냄새, 전역하자마자 해결</h3><p>원룸·고시원 특화 천연 탈취제. 놓는 순간 달라집니다</p></div></a>
 <div class="rel"><h2>다른 계산기</h2><div class="rg"><a class="rc" href="/unemployment/"><span class="ico">💼</span><span class="nm">실업급여 계산기</span></a>
 <a class="rc" href="/salary/"><span class="ico">💰</span><span class="nm">실수령액 계산기</span></a>
 <a class="rc" href="/insurance/"><span class="ico">🧮</span><span class="nm">4대보험 계산기</span></a>

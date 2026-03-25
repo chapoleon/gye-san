@@ -101,15 +101,24 @@ footer a:hover{color:var(--ac)}
 @media(max-width:600px){.w{padding:0 14px}header{padding:32px 0 14px}.card{padding:20px}.sg{grid-template-columns:repeat(2,1fr)}.rg{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}.hero-tools{grid-template-columns:1fr}.nav-links a{font-size:.72rem;padding:4px 8px}}
 @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .ani{animation:fu .5s ease forwards;opacity:0}.d1{animation-delay:.1s}.d2{animation-delay:.15s}
+
+.bn-img{display:block;margin:20px 0;border-radius:var(--rl);overflow:hidden;text-decoration:none;box-shadow:var(--sh);transition:all var(--tr);position:relative}
+.bn-img:hover{box-shadow:var(--shl);transform:translateY(-2px)}
+.bn-img img{width:100%;height:180px;object-fit:cover;display:block}
+.bn-img .bn-ov{position:absolute;bottom:0;left:0;right:0;padding:18px 22px;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+.bn-img .bn-ov h3{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:3px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.bn-img .bn-ov p{color:rgba(255,255,255,.88);font-size:.82rem}
+.bn-img .bn-tag{position:absolute;top:12px;right:12px;background:#059669;color:#fff;padding:5px 14px;border-radius:20px;font-size:.73rem;font-weight:700;letter-spacing:.02em}
+@media(max-width:600px){.bn-img img{height:140px}}
 </style></head><body><nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo"><span>gye</span>-san</a><div class="nav-links"><a href="/">🏠 홈</a><a href="/military/">🎖️ 전역일</a><a href="/unemployment/">💼 실업급여</a><a href="/salary/">💰 실수령액</a><a href="/insurance/">🧮 4대보험</a><a href="/vat/">🧾 부가세</a><a href="/acquisition-tax/" class="active">🏠 취득세</a><a href="/severance/">📦 퇴직금</a><a href="/hourly/">⏰ 시급</a></div></div></nav><div class="w"><header class="ani"><div class="badge"><span class="dot"></span>gye-san.com · 무료 온라인 도구</div><h1><span class="ac">취득세 계산기</span></h1><p class="sub">부동산 매매가 입력 → 취득세 즉시 계산</p></header>
 <div class="ad ani d1"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5440243063519453" data-ad-slot="1111111111" data-ad-format="horizontal" data-full-width-responsive="true"></ins></div>
 <main class="card ani d2"><div class="fg"><div><label>매매가 (원)</label><input type="text" id="price" placeholder="500,000,000" inputmode="numeric" autofocus></div><div class="fg fg2"><div><label>부동산 유형</label><select id="type"><option value="house">주택</option><option value="land">토지</option><option value="commercial">상가/오피스텔</option></select></div><div><label>주택 수</label><select id="count"><option value="1">1주택</option><option value="2">2주택</option><option value="3">3주택 이상</option></select></div></div><button class="btn" onclick="calc()">🏠 취득세 계산</button></div><div class="sg" id="result" style="display:none"><div class="si"><div class="sv ac" id="r1">0</div><div class="sl">취득세</div></div><div class="si"><div class="sv" id="r2">0</div><div class="sl">지방교육세</div></div><div class="si"><div class="sv" id="r3">0</div><div class="sl">농어촌특별세</div></div><div class="si"><div class="sv ac" id="r4">0</div><div class="sl">총 납부세액</div></div><div class="si"><div class="sv" id="r5">0%</div><div class="sl">실효세율</div></div></div></main>
-<a class="bn" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><div class="bi green"><span class="bico">🏡</span><div class="bt"><h3>새 집 입주? 새집증후군 냄새는 온다숲으로</h3><p>포름알데히드·페인트 냄새 제거. 입주 청소 필수템</p></div><span class="bcta">입주 세트 보기 →</span></div></a>
+<a class="bn-img" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><img src="/img/ondasoop.png" alt="온다숲 고체 탈취제"><div class="bn-tag">입주 필수</div><div class="bn-ov"><h3>새 집 입주? 새집증후군 냄새는 온다숲으로</h3><p>포름알데히드·페인트 냄새 제거. 입주 청소 필수템</p></div></a>
 <div class="ad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5440243063519453" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
 <div class="faq"><h2>자주 묻는 질문</h2><div class="fi"><div class="fq">1주택 취득세율은?</div><div class="fa">6억 이하 1%, 6~9억 2%, 9억 초과 3%.</div></div>
 <div class="fi"><div class="fq">다주택자는?</div><div class="fa">2주택 8%, 3주택 이상 12% 중과.</div></div>
 <div class="fi"><div class="fq">납부 기한은?</div><div class="fa">취득일로부터 60일 이내.</div></div></div>
-<a class="bn" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><div class="bi blue"><span class="bico">🔑</span><div class="bt"><h3>내 집 마련 축하합니다</h3><p>새 공간의 첫 향기, 온다숲 우롱차 고체 탈취제</p></div><span class="bcta">구경하기 →</span></div></a>
+<a class="bn-img" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><img src="/img/ondasoop.png" alt="온다숲 고체 탈취제"><div class="bn-tag">축하 선물</div><div class="bn-ov"><h3>내 집 마련 축하합니다</h3><p>새 공간의 첫 향기, 온다숲 우롱차 고체 탈취제</p></div></a>
 <div class="rel"><h2>다른 계산기</h2><div class="rg"><a class="rc" href="/military/"><span class="ico">🎖️</span><span class="nm">전역일 계산기</span></a>
 <a class="rc" href="/unemployment/"><span class="ico">💼</span><span class="nm">실업급여 계산기</span></a>
 <a class="rc" href="/salary/"><span class="ico">💰</span><span class="nm">실수령액 계산기</span></a>

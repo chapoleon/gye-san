@@ -101,17 +101,26 @@ footer a:hover{color:var(--ac)}
 @media(max-width:600px){.w{padding:0 14px}header{padding:32px 0 14px}.card{padding:20px}.sg{grid-template-columns:repeat(2,1fr)}.rg{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}.hero-tools{grid-template-columns:1fr}.nav-links a{font-size:.72rem;padding:4px 8px}}
 @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .ani{animation:fu .5s ease forwards;opacity:0}.d1{animation-delay:.1s}.d2{animation-delay:.15s}
+
+.bn-img{display:block;margin:20px 0;border-radius:var(--rl);overflow:hidden;text-decoration:none;box-shadow:var(--sh);transition:all var(--tr);position:relative}
+.bn-img:hover{box-shadow:var(--shl);transform:translateY(-2px)}
+.bn-img img{width:100%;height:180px;object-fit:cover;display:block}
+.bn-img .bn-ov{position:absolute;bottom:0;left:0;right:0;padding:18px 22px;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+.bn-img .bn-ov h3{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:3px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.bn-img .bn-ov p{color:rgba(255,255,255,.88);font-size:.82rem}
+.bn-img .bn-tag{position:absolute;top:12px;right:12px;background:#059669;color:#fff;padding:5px 14px;border-radius:20px;font-size:.73rem;font-weight:700;letter-spacing:.02em}
+@media(max-width:600px){.bn-img img{height:140px}}
 </style></head><body><nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo"><span>gye</span>-san</a><div class="nav-links"><a href="/">🏠 홈</a><a href="/military/">🎖️ 전역일</a><a href="/unemployment/" class="active">💼 실업급여</a><a href="/salary/">💰 실수령액</a><a href="/insurance/">🧮 4대보험</a><a href="/vat/">🧾 부가세</a><a href="/acquisition-tax/">🏠 취득세</a><a href="/severance/">📦 퇴직금</a><a href="/hourly/">⏰ 시급</a></div></div></nav><div class="w"><header class="ani"><div class="badge"><span class="dot"></span>gye-san.com · 무료 온라인 도구</div><h1><span class="ac">실업급여 계산기</span></h1><p class="sub">나이·근무기간·월급 입력 → 예상 실업급여 즉시 확인</p></header>
 <div class="ad ani d1"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5440243063519453" data-ad-slot="1111111111" data-ad-format="horizontal" data-full-width-responsive="true"></ins></div>
 <main class="card ani d2"><div class="fg"><div><label>퇴직 전 월 평균 급여 (세전, 원)</label><input type="text" id="sal" placeholder="3,000,000" inputmode="numeric" autofocus></div><div class="fg fg2"><div><label>나이</label><select id="age"><option value="u50">50세 미만</option><option value="o50">50세 이상</option></select></div><div><label>고용보험 가입기간</label><select id="period"><option value="1">1년 미만</option><option value="3">1~3년</option><option value="5">3~5년</option><option value="10">5~10년</option><option value="99">10년 이상</option></select></div></div><button class="btn" onclick="calc()">💼 실업급여 계산</button></div><div class="sg" id="result" style="display:none"><div class="si"><div class="sv ac" id="r1">0</div><div class="sl">1일 구직급여액 (원)</div></div><div class="si"><div class="sv" id="r2">0</div><div class="sl">수급 기간 (일)</div></div><div class="si"><div class="sv ac" id="r3">0</div><div class="sl">총 예상 수령액 (원)</div></div><div class="si"><div class="sv" id="r4">0</div><div class="sl">월 환산액 (원)</div></div></div></main>
-<a class="bn" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><div class="bi green"><span class="bico">🌿</span><div class="bt"><h3>구직 중에도, 집은 향기롭게</h3><p>한 달 한 개로 충분한 온다숲 고체 탈취제. 가성비 최고</p></div><span class="bcta">보러가기 →</span></div></a>
+<a class="bn-img" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><img src="/img/ondasoop.png" alt="온다숲 고체 탈취제"><div class="bn-tag">가성비 최고</div><div class="bn-ov"><h3>구직 중에도, 집은 향기롭게</h3><p>한 달 한 개로 충분. 커피 한 잔 가격의 프리미엄 탈취제</p></div></a>
 <div class="ad"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5440243063519453" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
 <div class="faq"><h2>자주 묻는 질문</h2><div class="fi"><div class="fq">실업급여 수급 조건은?</div><div class="fa">이직일 이전 18개월 중 고용보험 가입기간이 180일 이상이어야 합니다. 자발적 퇴사는 원칙적으로 제외됩니다.</div></div>
 <div class="fi"><div class="fq">실업급여 상한액은?</div><div class="fa">2026년 기준 1일 상한액 77,000원, 하한액 63,104원(최저시급의 80%)입니다.</div></div>
 <div class="fi"><div class="fq">실업급여 수급 기간은?</div><div class="fa">나이와 고용보험 가입기간에 따라 120일~270일입니다. 50세 이상이거나 장기 가입자일수록 길어집니다.</div></div>
 <div class="fi"><div class="fq">자발적 퇴사도 받을 수 있나요?</div><div class="fa">임금 체불, 직장 내 괴롭힘, 통근 곤란 등 정당한 사유가 있으면 가능합니다.</div></div>
 <div class="fi"><div class="fq">신청은 어디서 하나요?</div><div class="fa">관할 고용센터에 이직 후 지체 없이 구직 신청하면 됩니다. 워크넷(work.go.kr) 온라인 신청도 가능합니다.</div></div></div>
-<a class="bn" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><div class="bi blue"><span class="bico">💙</span><div class="bt"><h3>새 직장, 새 시작 — 공간부터 바꿔보세요</h3><p>온다숲 우롱차 방향으로 기분 좋은 하루를 시작하세요</p></div><span class="bcta">구경하기 →</span></div></a>
+<a class="bn-img" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener"><img src="/img/ondasoop.png" alt="온다숲 고체 탈취제"><div class="bn-tag">새 시작</div><div class="bn-ov"><h3>새 직장, 새 시작 — 공간부터 바꿔보세요</h3><p>온다숲 우롱차 향으로 기분 좋은 하루를 시작하세요</p></div></a>
 <div class="rel"><h2>다른 계산기</h2><div class="rg"><a class="rc" href="/military/"><span class="ico">🎖️</span><span class="nm">전역일 계산기</span></a>
 <a class="rc" href="/salary/"><span class="ico">💰</span><span class="nm">실수령액 계산기</span></a>
 <a class="rc" href="/insurance/"><span class="ico">🧮</span><span class="nm">4대보험 계산기</span></a>
