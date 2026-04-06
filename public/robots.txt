@@ -10,3 +10,4 @@ Sitemap: https://gye-san.com/sitemap-index.xml
 # Daum 웹마스터 도구 인증
 User-agent: Daum
 Allow: /
+405694bf889ff5cff2091e628f038fda59cc13313ab521ea944d32762899212a:N+z8ZHuz9tbabRU+Gt0kQQ==
