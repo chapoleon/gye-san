@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import SiteFooter from '@/components/SiteFooter'
-import AdsensePlaceholder from '@/components/AdsensePlaceholder'
+import AdSense from '@/components/AdSense'
 import { calculators } from '@/lib/calculators'
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <AdsensePlaceholder slot="1111111111" format="horizontal" />
+        <AdSense slot="1111111111" format="horizontal" />
         <div className="cta-bottom">
           <span>💡 더 많은 무료 계산기는 계산닷컴에서</span>
         </div>

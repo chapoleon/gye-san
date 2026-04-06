@@ -3,7 +3,7 @@ import Link from 'next/link'
 import CalculatorBody from '@/components/CalculatorBody'
 import FaqSection from '@/components/FaqSection'
 import SiteFooter from '@/components/SiteFooter'
-import AdsensePlaceholder from '@/components/AdsensePlaceholder'
+import AdSense from '@/components/AdSense'
 import {
   getAllSlugs,
   getCalculatorBySlug,
@@ -56,9 +56,9 @@ export default function CalculatorPage({ calc, related }) {
             <strong>{calc.description}</strong>
           </p>
         </header>
-        <AdsensePlaceholder slot="1111111111" format="horizontal" />
+        <AdSense slot="1111111111" format="horizontal" />
         <CalculatorBody formulaType={calc.formula_type} />
-        <AdsensePlaceholder slot="2222222222" />
+        <AdSense slot="2222222222" />
         <FaqSection items={calc.faq} />
         {related.length > 0 ? (
           <div className="rel">
@@ -76,7 +76,7 @@ export default function CalculatorPage({ calc, related }) {
         <div className="cta-bottom">
           <Link href="/">💡 더 많은 무료 계산기는 계산닷컴에서</Link>
         </div>
-        <AdsensePlaceholder slot="3333333333" />
+        <AdSense slot="3333333333" />
         <SiteFooter />
       </div>
     </>
