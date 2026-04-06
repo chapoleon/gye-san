@@ -2196,6 +2196,245 @@ export function LoanInterestWidget() {
   )
 }
 
+export function HealthInsuranceWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🏥"
+      title="건강보험료 계산기"
+      hint="보수월액·요율·장기요양 연동 산정을 준비 중입니다."
+      fields={[
+        { label: '월 보수월액 (만원)', placeholder: '예: 350' },
+        { label: '가입 유형', placeholder: '직장 / 지역' }
+      ]}
+    />
+  )
+}
+
+export function PensionWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🧓"
+      title="국민연금 수령액 계산기"
+      hint="가입기간·평균소득월액·수령 시기별 연금액 추정을 준비 중입니다."
+      fields={[
+        { label: '총 가입 기간 (월)', placeholder: '예: 360' },
+        { label: '평균소득월액 추정 (만원)', placeholder: '예: 400' }
+      ]}
+    />
+  )
+}
+
+export function EmploymentInsuranceWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🛡️"
+      title="고용보험료 계산기"
+      hint="실업·고안·능개 요율을 반영한 보험료 추정을 준비 중입니다."
+      fields={[
+        { label: '월 보수월액 (만원)', placeholder: '예: 300' },
+        { label: '사업장 유형', placeholder: '일반 / 우선지원 등' }
+      ]}
+    />
+  )
+}
+
+export function MinimumWageWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="💵"
+      title="최저시급 월급 계산기"
+      hint="2026년 시급·월 환산근로시간·주휴 포함 시나리오를 준비 중입니다."
+      fields={[
+        { label: '주 근로시간 (시간)', placeholder: '예: 40' },
+        { label: '시급 (원)', placeholder: '예: 10320' }
+      ]}
+    />
+  )
+}
+
+export function AnnualLeaveWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🏖️"
+      title="연차수당 계산기"
+      hint="미사용 연차 일수·통상임금 기반 수당 추정을 준비 중입니다."
+      fields={[
+        { label: '미사용 연차 (일)', placeholder: '예: 8' },
+        { label: '1일 통상임금 (원)', placeholder: '예: 150000' }
+      ]}
+    />
+  )
+}
+
+export function AlimonyWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="⚖️"
+      title="양육비 계산기"
+      hint="기준표·소득·자녀 연령을 반영한 참고액 산출을 준비 중입니다."
+      fields={[
+        { label: '부모 연 소득 합 (만원)', placeholder: '예: 8000' },
+        { label: '자녀 연령', placeholder: '예: 7' }
+      ]}
+    />
+  )
+}
+
+export function ChildAllowanceWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="👨‍👩‍👧"
+      title="아동수당 계산기"
+      hint="지급 조건·가산·소득 상한을 반영한 예상액 산출을 준비 중입니다."
+      fields={[
+        { label: '자녀 수', placeholder: '예: 2' },
+        { label: '가구 소득 구간 (만원)', placeholder: '예: 5000' }
+      ]}
+    />
+  )
+}
+
+export function NewbornSubsidyWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🎁"
+      title="출산지원금 계산기"
+      hint="첫만남이용권·지역 출산지원 등 합산 추정을 준비 중입니다."
+      fields={[
+        { label: '출생 순위 (첫째/둘째…)', placeholder: '예: 첫째' },
+        { label: '거주 지역 (시·도)', placeholder: '예: 서울' }
+      ]}
+    />
+  )
+}
+
+export function MortgageWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🏘️"
+      title="주택담보대출 계산기"
+      hint="LTV·금리·상환 방식·거치를 반영한 상환표 추정을 준비 중입니다."
+      fields={[
+        { label: '대출 원금 (만원)', placeholder: '예: 30000' },
+        { label: '연이율 (%)', placeholder: '예: 4.5' },
+        { label: '거치 (개월)', placeholder: '예: 0' }
+      ]}
+    />
+  )
+}
+
+export function CreditLoanWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="💳"
+      title="신용대출 이자 계산기"
+      hint="한도·금리·인출액 기반 월 이자 추정을 준비 중입니다."
+      fields={[
+        { label: '평균 인출 잔액 (만원)', placeholder: '예: 1000' },
+        { label: '약정 금리 (연 %)', placeholder: '예: 6.5' }
+      ]}
+    />
+  )
+}
+
+export function LeaseDepositWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🔐"
+      title="전세보증금 반환 계산기"
+      hint="만기일·지연이자·반환 순위를 반영한 추정을 준비 중입니다."
+      fields={[
+        { label: '전세 보증금 (만원)', placeholder: '예: 20000' },
+        { label: '연 지연이자율 (%)', placeholder: '예: 6' }
+      ]}
+    />
+  )
+}
+
+export function PropertyTaxWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🏡"
+      title="재산세 계산기"
+      hint="과세표준·세율·감면을 반영한 지방 재산세 추정을 준비 중입니다."
+      fields={[
+        { label: '공시지가 합산 (만원)', placeholder: '예: 60000' },
+        { label: '부동산 유형', placeholder: '주택 / 토지 / 건물' }
+      ]}
+    />
+  )
+}
+
+export function ComprehensivePropertyWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🏛️"
+      title="종합부동산세 계산기"
+      hint="공정시장가액·공제·누진·할증을 반영한 종부세 추정을 준비 중입니다."
+      fields={[
+        { label: '1세대 공제 전 과세 기준액 (억)', placeholder: '예: 12' },
+        { label: '보유 주택 수', placeholder: '예: 2' }
+      ]}
+    />
+  )
+}
+
+export function LocalIncomeTaxWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🏢"
+      title="지방소득세 계산기"
+      hint="국세 산출세액 연동·분리과세 유형별 산출을 준비 중입니다."
+      fields={[
+        { label: '과세 대상 소득세 산출세액 (만원)', placeholder: '예: 500' },
+        { label: '소득 유형', placeholder: '근로 / 사업 / 퇴직 등' }
+      ]}
+    />
+  )
+}
+
+export function StampTaxWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="📜"
+      title="인지세 계산기"
+      hint="증서 종류·과세표준 구간별 세액 산출을 준비 중입니다."
+      fields={[
+        { label: '증서 유형', placeholder: '예: 매매·증여·금전소비대차' },
+        { label: '과세표준 금액 (만원)', placeholder: '예: 50000' }
+      ]}
+    />
+  )
+}
+
+export function AgeCalculatorWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🎂"
+      title="만나이 계산기"
+      hint="출생일·기준일에 따른 만·세는·연 나이 표기를 준비 중입니다."
+      fields={[
+        { label: '생년월일', placeholder: 'YYYY-MM-DD' },
+        { label: '기준일', placeholder: 'YYYY-MM-DD' }
+      ]}
+    />
+  )
+}
+
+export function DateCalculatorWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="📅"
+      title="날짜 계산기 (D-Day)"
+      hint="기간 차이·D-Day·영업일 옵션을 준비 중입니다."
+      fields={[
+        { label: '시작일', placeholder: 'YYYY-MM-DD' },
+        { label: '종료일', placeholder: 'YYYY-MM-DD' }
+      ]}
+    />
+  )
+}
+
 export const WIDGET_BY_FORMULA_TYPE = {
   military: MilitaryWidget,
   pregnancy: PregnancyWidget,
@@ -2229,5 +2468,22 @@ export const WIDGET_BY_FORMULA_TYPE = {
   'stock-return': StockReturnWidget,
   maternity: MaternityWidget,
   'parental-leave': ParentalLeaveWidget,
-  'loan-interest': LoanInterestWidget
+  'loan-interest': LoanInterestWidget,
+  'health-insurance': HealthInsuranceWidget,
+  pension: PensionWidget,
+  'employment-insurance': EmploymentInsuranceWidget,
+  'minimum-wage': MinimumWageWidget,
+  'annual-leave': AnnualLeaveWidget,
+  alimony: AlimonyWidget,
+  'child-allowance': ChildAllowanceWidget,
+  'newborn-subsidy': NewbornSubsidyWidget,
+  mortgage: MortgageWidget,
+  'credit-loan': CreditLoanWidget,
+  'lease-deposit': LeaseDepositWidget,
+  'property-tax': PropertyTaxWidget,
+  'comprehensive-property': ComprehensivePropertyWidget,
+  'local-income-tax': LocalIncomeTaxWidget,
+  'stamp-tax': StampTaxWidget,
+  'age-calculator': AgeCalculatorWidget,
+  'date-calculator': DateCalculatorWidget
 }
