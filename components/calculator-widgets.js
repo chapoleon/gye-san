@@ -1952,6 +1952,250 @@ export function GpaWidget() {
   )
 }
 
+/* ——— placeholder (신규 계산기 — 산식 연결 전) ——— */
+function PlaceholderCalcWidget({ emoji, title, hint, fields }) {
+  return (
+    <main className="card ani d2">
+      <h2 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: 10 }}>{title}</h2>
+      <p className="hint" style={{ color: 'var(--t2)', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: 14 }}>
+        {hint}
+      </p>
+      <div className="fg">
+        {fields.map((f) => (
+          <div key={f.label}>
+            <label>{f.label}</label>
+            <input type="text" placeholder={f.placeholder} autoComplete="off" />
+          </div>
+        ))}
+        <button type="button" className="btn" disabled style={{ opacity: 0.72, cursor: 'not-allowed' }}>
+          {emoji} 자동 계산 (곧 제공)
+        </button>
+      </div>
+      <p style={{ marginTop: 14, fontSize: '0.78rem', color: 'var(--t3)' }}>
+        입력 항목과 산식은 순차적으로 반영됩니다.
+      </p>
+    </main>
+  )
+}
+
+export function WeeklyHolidayWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="📅"
+      title="주휴수당 계산기"
+      hint="2026년 통상임금·소정근로시간 기준 주휴수당 산정 로직을 준비 중입니다."
+      fields={[
+        { label: '1주 소정근로시간 (시간)', placeholder: '예: 40' },
+        { label: '시급 또는 통상시급 (원)', placeholder: '예: 10320' },
+        { label: '상시 근로 주 수', placeholder: '예: 4.345 (한 달 평균)' }
+      ]}
+    />
+  )
+}
+
+export function OvertimeWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="⏱️"
+      title="연장근로수당 계산기"
+      hint="연장·야간·휴일 가산을 구분 반영한 금액 산출을 준비 중입니다."
+      fields={[
+        { label: '통상시급 (원)', placeholder: '예: 15000' },
+        { label: '연장근로 시간 (시간)', placeholder: '예: 10' },
+        { label: '월 소정근로시간 (시간)', placeholder: '예: 209' }
+      ]}
+    />
+  )
+}
+
+export function NightPayWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🌙"
+      title="야간수당 계산기"
+      hint="22시~06시 야간 가산 50% 등 법정 가산을 반영한 추정치를 준비 중입니다."
+      fields={[
+        { label: '통상시급 (원)', placeholder: '예: 12000' },
+        { label: '야간 근로 시간 (시간)', placeholder: '예: 20' }
+      ]}
+    />
+  )
+}
+
+export function IncomeTaxWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🧾"
+      title="종합소득세 계산기"
+      hint="과세표준·세율 누진·세액공제를 반영한 확정신고 추정 모델을 준비 중입니다."
+      fields={[
+        { label: '종합소득금액 (만원)', placeholder: '예: 4500' },
+        { label: '인적·연금·특별공제 합산 (만원)', placeholder: '예: 800' }
+      ]}
+    />
+  )
+}
+
+export function InheritanceWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🏛️"
+      title="상속세 계산기"
+      hint="공제·과세가액·누진세율을 반영한 상속세 추정을 준비 중입니다."
+      fields={[
+        { label: '순재산가액 (억 원)', placeholder: '예: 12' },
+        { label: '상속인 수·공제 유형', placeholder: '예: 배우자 1, 자녀 2' }
+      ]}
+    />
+  )
+}
+
+export function JeonwolseWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🔑"
+      title="전월세전환 계산기"
+      hint="전환율·보증금·월세 상호 환산 시나리오를 준비 중입니다."
+      fields={[
+        { label: '전세 보증금 (만원)', placeholder: '예: 20000' },
+        { label: '월세 (만원)', placeholder: '예: 80' },
+        { label: '적용 전환율 (연 %)', placeholder: '예: 4.5' }
+      ]}
+    />
+  )
+}
+
+export function DsrDtiWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="📊"
+      title="DSR DTI 계산기"
+      hint="연 소득·기존·신규 원리금 상환액으로 DSR·DTI를 추정하는 모델을 준비 중입니다."
+      fields={[
+        { label: '연 소득 (만원)', placeholder: '예: 6000' },
+        { label: '기존 연 원리금 상환 (만원)', placeholder: '예: 600' },
+        { label: '신규 월 원리금 추정 (만원)', placeholder: '예: 120' }
+      ]}
+    />
+  )
+}
+
+export function YearEndTaxWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🔖"
+      title="연말정산 환급액 계산기"
+      hint="근로소득·원천징수·세액공제를 반영한 환급·추가납부 추정을 준비 중입니다."
+      fields={[
+        { label: '연간 총 급여 (만원)', placeholder: '예: 4800' },
+        { label: '원천징수 세액 (만원)', placeholder: '예: 180' },
+        { label: '세액공제 합산 (만원)', placeholder: '예: 90' }
+      ]}
+    />
+  )
+}
+
+export function RentalTaxWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🏠"
+      title="임대소득세 계산기"
+      hint="필요경비·기준경비·과세 방식별 임대소득 추정을 준비 중입니다."
+      fields={[
+        { label: '연 임대 수입 (만원)', placeholder: '예: 2400' },
+        { label: '실제 필요경비 (만원)', placeholder: '예: 400' }
+      ]}
+    />
+  )
+}
+
+export function CarTaxWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🚗"
+      title="자동차세 계산기"
+      hint="배기량·차종·감면 여부를 반영한 지방세 자동차세 추정을 준비 중입니다."
+      fields={[
+        { label: '배기량 (cc)', placeholder: '예: 1999' },
+        { label: '차종 (승용·승합·화물 등)', placeholder: '예: 승용 비영업' }
+      ]}
+    />
+  )
+}
+
+export function SavingsWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="💵"
+      title="적금이자 계산기"
+      hint="적립액·금리 방식(단리·복리)·만기에 따른 수령액 추정을 준비 중입니다."
+      fields={[
+        { label: '월 납입액 (만원)', placeholder: '예: 50' },
+        { label: '연이율 (%)', placeholder: '예: 3.5' },
+        { label: '적립 개월 수', placeholder: '예: 12' }
+      ]}
+    />
+  )
+}
+
+export function StockReturnWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="📈"
+      title="주식수익률 계산기"
+      hint="매수·매도·수수료·세금을 반영한 실현 손익·수익률을 준비 중입니다."
+      fields={[
+        { label: '매수 단가 (원)', placeholder: '예: 50000' },
+        { label: '수량 (주)', placeholder: '예: 100' },
+        { label: '매도 단가 (원)', placeholder: '예: 55000' }
+      ]}
+    />
+  )
+}
+
+export function MaternityWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="👶"
+      title="출산휴가급여 계산기"
+      hint="고용보험 출산전후휴가급여 일액·일수를 반영한 추정을 준비 중입니다."
+      fields={[
+        { label: '통상임금 기준 일 급여 (원)', placeholder: '고시 상한 적용 전' },
+        { label: '출산전후휴가 일수', placeholder: '예: 90' }
+      ]}
+    />
+  )
+}
+
+export function ParentalLeaveWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🧸"
+      title="육아휴직급여 계산기"
+      hint="육아휴직 급여 구간별 비율·상한을 반영한 월별 추정을 준비 중입니다."
+      fields={[
+        { label: '휴직 전 월 평균임금 (원)', placeholder: '예: 3500000' },
+        { label: '육아휴직 개월 수', placeholder: '예: 12' }
+      ]}
+    />
+  )
+}
+
+export function LoanInterestWidget() {
+  return (
+    <PlaceholderCalcWidget
+      emoji="🏦"
+      title="대출이자 계산기"
+      hint="원리금균등·원금균등·만기일시 등 상환 방식별 상환표 추정을 준비 중입니다."
+      fields={[
+        { label: '대출 원금 (만원)', placeholder: '예: 10000' },
+        { label: '연이율 (%)', placeholder: '예: 4.2' },
+        { label: '대출 기간 (개월)', placeholder: '예: 240' }
+      ]}
+    />
+  )
+}
+
 export const WIDGET_BY_FORMULA_TYPE = {
   military: MilitaryWidget,
   pregnancy: PregnancyWidget,
@@ -1970,5 +2214,20 @@ export const WIDGET_BY_FORMULA_TYPE = {
   compound: CompoundWidget,
   bmr: BmrWidget,
   freelance: FreelanceWidget,
-  gpa: GpaWidget
+  gpa: GpaWidget,
+  'weekly-holiday': WeeklyHolidayWidget,
+  overtime: OvertimeWidget,
+  'night-pay': NightPayWidget,
+  'income-tax': IncomeTaxWidget,
+  inheritance: InheritanceWidget,
+  jeonwolse: JeonwolseWidget,
+  'dsr-dti': DsrDtiWidget,
+  'year-end-tax': YearEndTaxWidget,
+  'rental-tax': RentalTaxWidget,
+  'car-tax': CarTaxWidget,
+  savings: SavingsWidget,
+  'stock-return': StockReturnWidget,
+  maternity: MaternityWidget,
+  'parental-leave': ParentalLeaveWidget,
+  'loan-interest': LoanInterestWidget
 }
