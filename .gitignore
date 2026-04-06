@@ -2,6 +2,11 @@ moneyfit-sitemap.xml
 node_modules/
 .next/
 out/
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map
+public/fallback-*.js
 *.log
 _cap_*.txt
 _gift_script.js
