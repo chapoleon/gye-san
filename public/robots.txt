@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gye-san.com/sitemap-index.xml

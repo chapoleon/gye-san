@@ -1,1 +1,8 @@
 moneyfit-sitemap.xml
+node_modules/
+.next/
+out/
+*.log
+_cap_*.txt
+_gift_script.js
+_comm_main.txt
