@@ -45,6 +45,19 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <a
+          className="bn-img"
+          href="https://www.ondasoop.com/product/detail.html?product_no=644&cate_no=76&display_group=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/img/ondasoop.png" alt="온다숲 고체 탈취제" />
+          <div className="bn-tag">BEST</div>
+          <div className="bn-ov">
+            <h3>매일 120만 명이 찾는 사이트가 추천하는 생활용품</h3>
+            <p>천연 성분 프리미엄 탈취제 · 방향제 — 온다숲</p>
+          </div>
+        </a>
         <AdSense slot="1111111111" format="horizontal" />
         <div className="cta-bottom">
           <span>💡 더 많은 무료 계산기는 계산닷컴에서</span>
