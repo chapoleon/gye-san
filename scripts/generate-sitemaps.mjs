@@ -46,8 +46,8 @@ const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 `
 
 if (!fs.existsSync(out)) {
-  console.warn('out/ missing — run after next build')
-  process.exit(0)
+  console.error('out/ missing — run `next build` (static export) before generate-sitemaps.mjs')
+  process.exit(1)
 }
 
 fs.writeFileSync(path.join(out, 'sitemap-calculators.xml'), calcXml, 'utf8')
