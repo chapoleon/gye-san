@@ -4,6 +4,7 @@ import CalculatorBody from '@/components/CalculatorBody'
 import FaqSection from '@/components/FaqSection'
 import SiteFooter from '@/components/SiteFooter'
 import AdSense from '@/components/AdSense'
+import ProductBanner from '@/components/ProductBanner'
 import {
   getAllSlugs,
   getCalculatorBySlug,
@@ -58,6 +59,7 @@ export default function CalculatorPage({ calc, related }) {
         </header>
         <AdSense slot="1111111111" format="horizontal" />
         <CalculatorBody formulaType={calc.formula_type} />
+        <ProductBanner banner={calc.banner} />
         <AdSense slot="2222222222" />
         <FaqSection items={calc.faq} />
         {related.length > 0 ? (
