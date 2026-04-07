@@ -71,8 +71,8 @@ export default function Home() {
           <img src="/img/ondasoop.png" alt="온다숲" />
           <div className="bn-tag">BEST</div>
           <div className="bn-ov">
-            <h3>자연에서 찾은 편안함, 온다숲</h3>
-            <p>집 안을 더 상쾌하게 — 천연 성분 향기/탈취 라인업</p>
+            <h3>천연 고체 탈취제, 온다숲</h3>
+            <p>화학성분 없이 자연 원료로 만든 프리미엄 고체 탈취제</p>
           </div>
         </a>
 
