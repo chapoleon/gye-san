@@ -61,24 +61,19 @@ export default function Home() {
                 <div className="card-lg-vol">{featuredMeta[c.slug]?.vol ?? '월간 검색수 —'}</div>
               </div>
               <h3>{c.name}</h3>
-              <p>{c.description}</p>
+              <p>{c.short_description ?? c.description}</p>
               <div className="card-lg-cta">바로 계산하기 →</div>
             </Link>
           ))}
         </div>
 
-        <a
-          className="brand-banner"
-          href="https://smartstore.naver.com/ondasoop"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img className="brand-img" src="/img/ondasoop.png" alt="온다숲" />
-          <div className="brand-copy">
+        <a className="bn-img" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener noreferrer">
+          <img src="/img/ondasoop.png" alt="온다숲" />
+          <div className="bn-tag">BEST</div>
+          <div className="bn-ov">
             <h3>자연에서 찾은 편안함, 온다숲</h3>
             <p>집 안을 더 상쾌하게 — 천연 성분 향기/탈취 라인업</p>
           </div>
-          <div className="brand-cta">둘러보기 →</div>
         </a>
 
         <div className="section-title">카테고리</div>
@@ -104,7 +99,7 @@ export default function Home() {
                 <span className="ic">{c.icon ?? c.emoji}</span>
                 <span className="nm">{c.name}</span>
               </div>
-              <div className="ds">{c.description}</div>
+              <div className="ds">{c.short_description ?? c.description}</div>
             </Link>
           ))}
         </div>

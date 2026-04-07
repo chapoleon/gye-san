@@ -23,7 +23,15 @@ export default function ProductBanner({ banner }) {
   return (
     <div className={`product-banner ${p.theme}`}>
       <a href={p.href} target="_blank" rel="noopener noreferrer">
-        <img className="pb-img" src={p.img} alt={p.name} />
+        <img
+          className="pb-img"
+          src={p.img}
+          alt={p.name}
+          onError={(e) => {
+            e.currentTarget.onerror = null
+            e.currentTarget.src = '/img/ondasoop.png'
+          }}
+        />
         <div className="pb-copy">
           <h3>{p.name}</h3>
           <p>{banner.message}</p>

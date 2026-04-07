@@ -103,7 +103,7 @@ input[type="date"]{font-family:var(--font)}
 .card-lg-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .card-lg-ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--acs);font-size:1.45rem}
 .card-lg-vol{font-size:.74rem;color:var(--t3);font-weight:700}
-.card-lg h3{font-size:1.02rem;letter-spacing:-.02em;margin-bottom:6px}
+.card-lg h3{font-size:1.02rem;letter-spacing:-.02em;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 .card-lg p{font-size:.86rem;color:var(--t2);line-height:1.6;flex:1}
 .card-lg-cta{margin-top:12px;color:var(--ac);font-weight:800;font-size:.84rem}
 .brand-banner{display:flex;gap:16px;align-items:center;background:linear-gradient(135deg,#FFFBEB,#F1F5F9);border:1px solid var(--bd);border-radius:var(--rl);padding:16px 18px;box-shadow:var(--sh);text-decoration:none;color:var(--t1);transition:all var(--tr);margin:18px 0}
@@ -117,7 +117,7 @@ input[type="date"]{font-family:var(--font)}
 .calc-card:hover{box-shadow:var(--shm);transform:translateY(-2px);border-color:var(--ac)}
 .calc-card .row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
 .calc-card .ic{width:34px;height:34px;border-radius:10px;background:var(--acs);display:grid;place-items:center;font-size:1.15rem;flex-shrink:0}
-.calc-card .nm{font-weight:800;font-size:.9rem;letter-spacing:-.01em}
+.calc-card .nm{font-weight:800;font-size:.9rem;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 .calc-card .ds{font-size:.78rem;color:var(--t2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
 /* Product banner */
