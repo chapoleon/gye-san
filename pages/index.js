@@ -99,7 +99,6 @@ export default function Home() {
                 <span className="ic">{c.icon ?? c.emoji}</span>
                 <span className="nm">{c.name}</span>
               </div>
-              <div className="ds">{c.short_description ?? c.description}</div>
             </Link>
           ))}
         </div>

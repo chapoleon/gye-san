@@ -112,13 +112,12 @@ input[type="date"]{font-family:var(--font)}
 .brand-copy h3{font-size:.95rem;margin-bottom:2px}
 .brand-copy p{font-size:.82rem;color:var(--t2)}
 .brand-cta{margin-left:auto;font-size:.82rem;font-weight:900;color:var(--ac);white-space:nowrap}
-.calc-grid{display:grid;gap:10px;grid-template-columns:repeat(4,1fr);margin-top:8px}
-.calc-card{background:var(--bg);border:1px solid var(--bd);border-radius:var(--r);padding:14px 14px 12px;box-shadow:var(--sh);transition:all var(--tr);text-decoration:none;color:var(--t1)}
+.calc-grid{display:grid;gap:8px;grid-template-columns:repeat(4,1fr);margin-top:6px}
+.calc-card{background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:10px 10px;box-shadow:var(--sh);transition:all var(--tr);text-decoration:none;color:var(--t1)}
 .calc-card:hover{box-shadow:var(--shm);transform:translateY(-2px);border-color:var(--ac)}
-.calc-card .row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.calc-card .ic{width:34px;height:34px;border-radius:10px;background:var(--acs);display:grid;place-items:center;font-size:1.15rem;flex-shrink:0}
-.calc-card .nm{font-weight:800;font-size:.9rem;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
-.calc-card .ds{font-size:.78rem;color:var(--t2);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.calc-card .row{display:flex;align-items:center;gap:8px}
+.calc-card .ic{width:30px;height:30px;border-radius:10px;background:var(--acs);display:grid;place-items:center;font-size:1.05rem;flex-shrink:0}
+.calc-card .nm{font-weight:800;font-size:clamp(.78rem,1.8vw,.88rem);letter-spacing:-.02em;line-height:1.25;white-space:normal;overflow:visible;display:block}
 
 /* Product banner */
 .product-banner{margin:18px 0;border-radius:var(--rl);border:1px solid var(--bd);box-shadow:var(--sh);overflow:hidden}
