@@ -97,7 +97,7 @@ export default function Home() {
             <Link key={c.slug} href={`/calculators/${c.slug}/`} className="calc-card">
               <div className="row">
                 <span className="ic">{c.icon ?? c.emoji}</span>
-                <span className="nm">{c.name}</span>
+                <span className="nm">{c.short_name ?? c.name}</span>
               </div>
             </Link>
           ))}
