@@ -119,20 +119,12 @@ input[type="date"]{font-family:var(--font)}
 .calc-card .ic{width:30px;height:30px;border-radius:10px;background:var(--acs);display:grid;place-items:center;font-size:1.05rem;flex-shrink:0}
 .calc-card .nm{font-weight:800;font-size:14px;letter-spacing:-.02em;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 
-/* Product banner */
-.product-banner{margin:18px 0;border-radius:var(--rl);border:1px solid var(--bd);box-shadow:var(--sh);overflow:hidden}
-.product-banner a{display:flex;gap:16px;align-items:center;padding:18px 20px;text-decoration:none;color:inherit;transition:all var(--tr)}
-.product-banner a:hover{transform:translateY(-2px);box-shadow:var(--shl)}
-.product-banner.ondasoop{background:linear-gradient(135deg,#FFFBEB,#F1F5F9)}
-.product-banner.bugx{background:linear-gradient(135deg,#EFF6FF,#DBEAFE)}
-.pb-img{width:120px;height:82px;border-radius:14px;object-fit:cover;background:rgba(255,255,255,.75);border:1px solid rgba(0,0,0,.06);flex-shrink:0}
-.pb-copy{flex:1;min-width:0}
-.pb-copy h3{font-size:.95rem;font-weight:900;letter-spacing:-.02em;margin-bottom:4px}
-.pb-copy p{font-size:.86rem;color:var(--t2);line-height:1.6}
-.pb-btn{padding:10px 14px;border-radius:999px;background:var(--ac);color:#fff;font-weight:900;font-size:.82rem;white-space:nowrap;flex-shrink:0}
+/* Product banner (계산기 하단 — 메인 .bn-img와 동일 레이아웃) */
+.product-banner{margin:18px 0}
+.product-banner .bn-img{margin:0}
 
 @media(max-width:900px){.featured-grid{grid-template-columns:1fr}.calc-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.calc-grid{grid-template-columns:repeat(2,1fr)}.brand-banner{flex-direction:column;align-items:flex-start}.brand-cta{margin-left:0}.product-banner a{flex-direction:column;align-items:flex-start}.pb-btn{align-self:stretch;text-align:center}}
+@media(max-width:600px){.calc-grid{grid-template-columns:repeat(2,1fr)}.brand-banner{flex-direction:column;align-items:flex-start}.brand-cta{margin-left:0}}
 .hero-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
 .hero-tools a{display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 12px;background:var(--bg);border:1px solid var(--bd);border-radius:var(--rl);text-decoration:none;color:var(--t1);transition:all var(--tr);box-shadow:var(--sh);text-align:center}
 .hero-tools a:hover{border-color:var(--ac);box-shadow:var(--shm);transform:translateY(-3px)}

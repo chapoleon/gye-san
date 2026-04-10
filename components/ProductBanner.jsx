@@ -5,13 +5,15 @@ const PRODUCT = {
     name: '온다숲',
     href: 'https://smartstore.naver.com/ondasoop',
     img: '/img/ondasoop.png',
-    theme: 'ondasoop'
+    overlayTitle: '천연 고체 탈취제, 온다숲',
+    overlaySubtitle: '화학성분 없이 자연 원료로 만든 프리미엄 고체 탈취제'
   },
   bugx: {
     name: '버그엑스',
     href: 'https://smartstore.naver.com/bugx',
     img: '/img/bugx.png',
-    theme: 'bugx'
+    overlayTitle: '프리미엄 해충 방제, 버그엑스',
+    overlaySubtitle: null
   }
 }
 
@@ -20,11 +22,12 @@ export default function ProductBanner({ banner }) {
   const p = PRODUCT[banner.product]
   if (!p) return null
 
+  const subtitle = p.overlaySubtitle ?? banner.message
+
   return (
-    <div className={`product-banner ${p.theme}`}>
-      <a href={p.href} target="_blank" rel="noopener noreferrer">
+    <div className="product-banner">
+      <a className="bn-img" href={p.href} target="_blank" rel="noopener noreferrer">
         <img
-          className="pb-img"
           src={p.img}
           alt={p.name}
           onError={(e) => {
@@ -32,13 +35,12 @@ export default function ProductBanner({ banner }) {
             e.currentTarget.src = '/img/ondasoop.png'
           }}
         />
-        <div className="pb-copy">
-          <h3>{p.name}</h3>
-          <p>{banner.message}</p>
+        <div className="bn-tag">BEST</div>
+        <div className="bn-ov">
+          <h3>{p.overlayTitle}</h3>
+          {subtitle ? <p>{subtitle}</p> : null}
         </div>
-        <span className="pb-btn">자세히 보기 →</span>
       </a>
     </div>
   )
 }
-
