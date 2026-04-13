@@ -2,11 +2,6 @@ User-agent: *
 Allow: /
 Sitemap: https://gye-san.com/sitemap-index.xml
 
-User-agent: *
-Allow: /
-
-Sitemap: https://gye-san.com/sitemap-index.xml
-
 # Daum 웹마스터 도구 인증
 User-agent: Daum
 Allow: /
