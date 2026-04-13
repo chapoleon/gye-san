@@ -5,7 +5,8 @@ import { useRouter } from 'next/router'
 import { calculators } from '@/lib/calculators'
 
 const extra = [
-  { href: '/', label: '🏠 홈', slug: null }
+  { href: '/', label: '🏠 홈', slug: null },
+  { href: '/guides/', label: '📚 가이드', slug: null }
 ]
 
 export default function Nav() {

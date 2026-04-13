@@ -18,6 +18,10 @@ const blogData = JSON.parse(fs.readFileSync(path.join(root, 'data', 'blog.json')
 const calcUrls = [
   urlEntry(`${base}/`),
   urlEntry(`${base}/calculators/`),
+  urlEntry(`${base}/guides/`),
+  urlEntry(`${base}/guides/ads-txt/`),
+  urlEntry(`${base}/guides/about/`),
+  urlEntry(`${base}/contact/`),
   urlEntry(`${base}/privacy/`),
   urlEntry(`${base}/terms/`),
   ...calcData.calculators.map((c) => urlEntry(`${base}/calculators/${c.slug}/`))

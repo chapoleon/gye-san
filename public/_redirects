@@ -1,6 +1,8 @@
 /sitemap.xml /sitemap-index.xml 301
 # 슬래시 없는 URL·목차 404 방지 (301 → 정규 URL)
 /calculators /calculators/ 301
+/guides /guides/ 301
+/contact /contact/ 301
 /privacy /privacy/ 301
 /terms /terms/ 301
 /calculators/:slug /calculators/:slug/ 301
