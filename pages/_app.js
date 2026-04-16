@@ -10,6 +10,12 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <meta name="google-adsense-account" content="ca-pub-5440243063519453" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5440243063519453"
+          crossOrigin="anonymous"
+        />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <meta name="application-name" content="계산닷컴" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -27,11 +33,6 @@ export default function App({ Component, pageProps }) {
           gtag('config', 'G-9ZJM9GHEVJ');
         `}
       </Script>
-      <Script
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5440243063519453"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-      />
       <Nav />
       <Component {...pageProps} />
       <PwaInstallPrompt />
