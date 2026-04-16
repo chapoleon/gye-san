@@ -14,7 +14,7 @@ const guides = [
     summary: '애드센스에서 ads.txt를 찾지 못할 때 점검 포인트와 정상 확인 방법을 정리했습니다.'
   },
   {
-    href: '/guides/about/',
+    href: '/about/',
     title: '계산닷컴 소개',
     summary: '사이트 목적, 데이터 처리 방식, 문의 방법을 안내합니다.'
   }
@@ -33,7 +33,7 @@ export default function GuidesIndexPage() {
         <meta property="og:url" content={url} />
         <meta property="og:locale" content="ko_KR" />
       </Head>
-      <div className="w">
+      <main className="w">
         <header className="ani">
           <div className="badge">
             <span className="dot" />
@@ -60,7 +60,7 @@ export default function GuidesIndexPage() {
 
         <AdSense slot="1111111111" format="horizontal" />
         <SiteFooter />
-      </div>
+      </main>
     </>
   )
 }

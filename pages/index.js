@@ -37,7 +37,7 @@ export default function Home() {
         <meta property="og:url" content="https://gye-san.com/" />
         <meta property="og:locale" content="ko_KR" />
       </Head>
-      <div className="w">
+      <main className="w">
         <header className="hero ani">
           <div className="badge">
             <span className="dot" />
@@ -67,6 +67,7 @@ export default function Home() {
           ))}
         </div>
 
+        {/* AdSense 승인 전: 온다숲 스토어 배너 비활성화 (승인 후 주석 해제)
         <a className="bn-img" href="https://smartstore.naver.com/ondasoop" target="_blank" rel="noopener noreferrer">
           <img src="/img/ondasoop.png" alt="온다숲" />
           <div className="bn-tag">BEST</div>
@@ -75,6 +76,7 @@ export default function Home() {
             <p>화학성분 없이 자연 원료로 만든 프리미엄 고체 탈취제</p>
           </div>
         </a>
+        */}
 
         <div className="section-title">카테고리</div>
         <div className="tabs" role="tablist" aria-label="카테고리 탭">
@@ -108,7 +110,7 @@ export default function Home() {
           <span>💡 더 많은 무료 계산기는 계산닷컴에서</span>
         </div>
         <SiteFooter />
-      </div>
+      </main>
     </>
   )
 }

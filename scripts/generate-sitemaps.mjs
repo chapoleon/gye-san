@@ -18,6 +18,7 @@ const blogData = JSON.parse(fs.readFileSync(path.join(root, 'data', 'blog.json')
 const calcUrls = [
   urlEntry(`${base}/`),
   urlEntry(`${base}/calculators/`),
+  urlEntry(`${base}/about/`),
   urlEntry(`${base}/guides/`),
   urlEntry(`${base}/guides/ads-txt/`),
   urlEntry(`${base}/guides/about/`),
@@ -58,4 +59,12 @@ if (!fs.existsSync(out)) {
 fs.writeFileSync(path.join(out, 'sitemap-calculators.xml'), calcXml, 'utf8')
 fs.writeFileSync(path.join(out, 'sitemap-blog.xml'), blogXml, 'utf8')
 fs.writeFileSync(path.join(out, 'sitemap-index.xml'), indexXml, 'utf8')
+
+const mergedEntries = [...calcUrls, ...blogUrls]
+const mergedXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${mergedEntries.join('\n')}
+</urlset>
+`
+fs.writeFileSync(path.join(out, 'sitemap.xml'), mergedXml, 'utf8')
 console.log('sitemaps written to out/')

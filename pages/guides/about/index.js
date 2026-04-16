@@ -3,7 +3,7 @@ import Link from 'next/link'
 import SiteFooter from '@/components/SiteFooter'
 
 const url = 'https://gye-san.com/guides/about/'
-const title = '계산닷컴 소개 | 계산닷컴'
+const title = '가이드: 계산닷컴 소개 | 계산닷컴'
 const desc =
   '계산닷컴(gye-san.com)은 2026년 기준에 맞춘 생활·급여·세금·부동산·금융 계산기를 제공하며, 입력값은 브라우저에서 처리됩니다.'
 
@@ -20,7 +20,7 @@ export default function AboutGuidePage() {
         <meta property="og:url" content={url} />
         <meta property="og:locale" content="ko_KR" />
       </Head>
-      <div className="w">
+      <main className="w">
         <header className="ani">
           <div className="badge">
             <span className="dot" />
@@ -50,7 +50,10 @@ export default function AboutGuidePage() {
           </p>
 
           <div className="btn-row" style={{ marginTop: 18 }}>
-            <Link className="btn" href="/contact/">
+            <Link className="btn" href="/about/">
+              상세 소개(/about)
+            </Link>
+            <Link className="btn btn-ghost" href="/contact/">
               문의하기
             </Link>
             <Link className="btn btn-ghost" href="/guides/">
@@ -60,7 +63,7 @@ export default function AboutGuidePage() {
         </div>
 
         <SiteFooter />
-      </div>
+      </main>
     </>
   )
 }

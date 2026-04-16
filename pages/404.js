@@ -10,10 +10,11 @@ export default function Custom404() {
     <>
       <Head>
         <title>{title}</title>
+        <meta name="description" content="요청하신 주소의 페이지를 찾을 수 없습니다. 계산닷컴 홈 또는 계산기 목록으로 이동해 주세요." />
         <meta name="robots" content="noindex,follow" />
         <link rel="canonical" href={url} />
       </Head>
-      <div className="w">
+      <main className="w">
         <header className="ani">
           <div className="badge">
             <span className="dot" />
@@ -43,7 +44,7 @@ export default function Custom404() {
         </div>
 
         <SiteFooter />
-      </div>
+      </main>
     </>
   )
 }

@@ -4,7 +4,9 @@ import CalculatorBody from '@/components/CalculatorBody'
 import FaqSection from '@/components/FaqSection'
 import SiteFooter from '@/components/SiteFooter'
 import AdSense from '@/components/AdSense'
-import ProductBanner from '@/components/ProductBanner'
+import CalculatorSeoArticle from '@/components/CalculatorSeoArticle'
+import { shouldAppendSeoArticle } from '@/lib/getCalculatorSeoSections'
+// import ProductBanner from '@/components/ProductBanner' // AdSense 승인 전 비활성화
 import {
   getAllSlugs,
   getCalculatorBySlug,
@@ -44,7 +46,7 @@ export default function CalculatorPage({ calc, related }) {
         ) : null}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }} />
       </Head>
-      <div className="w">
+      <main className="w">
         <header className="ani">
           <div className="badge">
             <span className="dot" />
@@ -57,11 +59,16 @@ export default function CalculatorPage({ calc, related }) {
             <strong>{calc.description}</strong>
           </p>
         </header>
-        <AdSense slot="1111111111" format="horizontal" />
-        <CalculatorBody formulaType={calc.formula_type} />
-        <ProductBanner banner={calc.banner} />
-        <AdSense slot="2222222222" />
-        <FaqSection items={calc.faq} />
+        <article>
+          <AdSense slot="1111111111" format="horizontal" />
+          <CalculatorBody formulaType={calc.formula_type} />
+          {/* AdSense 승인 전: 제휴 스토어 배너 비활성화 (승인 후 주석 해제)
+          <ProductBanner banner={calc.banner} />
+          */}
+          <AdSense slot="2222222222" />
+          <FaqSection items={calc.faq} />
+          {shouldAppendSeoArticle(calc) ? <CalculatorSeoArticle calc={calc} /> : null}
+        </article>
         {related.length > 0 ? (
           <div className="rel">
             <h2>관련 계산기</h2>
@@ -80,7 +87,7 @@ export default function CalculatorPage({ calc, related }) {
         </div>
         <AdSense slot="3333333333" />
         <SiteFooter />
-      </div>
+      </main>
     </>
   )
 }

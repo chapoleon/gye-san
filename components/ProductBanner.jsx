@@ -1,5 +1,3 @@
-import React from 'react'
-
 const PRODUCT = {
   ondasoop: {
     name: '온다숲',
@@ -17,6 +15,17 @@ const PRODUCT = {
   }
 }
 
+/**
+ * AdSense 승인 전: 외부 스토어(온다숲·버그엑스 등) 링크 배너를 표시하지 않습니다.
+ * 승인 후 재활성화 시 아래 주석 블록의 JSX를 return에 되돌리시기 바랍니다.
+ */
+export default function ProductBanner({ banner }) {
+  void banner
+  void PRODUCT
+  return null
+}
+
+/* ——— 이전 UI (보존): 승인 후 주석 해제하여 본문과 교체 ———
 export default function ProductBanner({ banner }) {
   if (!banner) return null
   const p = PRODUCT[banner.product]
@@ -44,3 +53,4 @@ export default function ProductBanner({ banner }) {
     </div>
   )
 }
+*/

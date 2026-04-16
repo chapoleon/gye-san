@@ -9,7 +9,7 @@ export default function Terms() {
         <meta name="description" content="계산닷컴(gye-san.com) 이용약관입니다." />
         <link rel="canonical" href="https://gye-san.com/terms/" />
       </Head>
-      <div className="w">
+      <main className="w">
         <header style={{ padding: '40px 0 20px' }}>
           <h1 style={{ fontSize: '1.5rem' }}>이용약관</h1>
         </header>
@@ -20,7 +20,7 @@ export default function Terms() {
           </p>
         </div>
         <SiteFooter />
-      </div>
+      </main>
     </>
   )
 }

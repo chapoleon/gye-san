@@ -24,7 +24,7 @@ export default function CalculatorsIndexPage() {
         <meta property="og:url" content={url} />
         <meta property="og:locale" content="ko_KR" />
       </Head>
-      <div className="w">
+      <main className="w">
         <header className="ani">
           <div className="badge">
             <span className="dot" />
@@ -52,7 +52,7 @@ export default function CalculatorsIndexPage() {
 
         <AdSense slot="1111111111" format="horizontal" />
         <SiteFooter />
-      </div>
+      </main>
     </>
   )
 }
