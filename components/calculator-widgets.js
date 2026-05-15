@@ -1967,12 +1967,12 @@ function PlaceholderCalcWidget({ emoji, title, hint, fields }) {
             <input type="text" placeholder={f.placeholder} autoComplete="off" />
           </div>
         ))}
-        <button type="button" className="btn" disabled style={{ opacity: 0.72, cursor: 'not-allowed' }}>
-          {emoji} 자동 계산 (곧 제공)
+        <button type="button" className="btn" disabled style={{ opacity: 0.72, cursor: 'not-allowed' }} aria-disabled="true">
+          {emoji} 계산하기
         </button>
       </div>
       <p style={{ marginTop: 14, fontSize: '0.78rem', color: 'var(--t3)' }}>
-        입력 항목과 산식은 순차적으로 반영됩니다.
+        산식 연동 전 단계입니다. 유사 기능이 있는 다른 계산기를 참고해 주세요.
       </p>
     </main>
   )
@@ -1983,7 +1983,7 @@ export function WeeklyHolidayWidget() {
     <PlaceholderCalcWidget
       emoji="📅"
       title="주휴수당 계산기"
-      hint="2026년 통상임금·소정근로시간 기준 주휴수당 산정 로직을 준비 중입니다."
+      hint="2026년 통상임금·소정근로시간 기준 주휴수당 산정 로직을 추가 예정입니다."
       fields={[
         { label: '1주 소정근로시간 (시간)', placeholder: '예: 40' },
         { label: '시급 또는 통상시급 (원)', placeholder: '예: 10320' },
@@ -1998,7 +1998,7 @@ export function OvertimeWidget() {
     <PlaceholderCalcWidget
       emoji="⏱️"
       title="연장근로수당 계산기"
-      hint="연장·야간·휴일 가산을 구분 반영한 금액 산출을 준비 중입니다."
+      hint="연장·야간·휴일 가산을 구분 반영한 금액 산출을 추가 예정입니다."
       fields={[
         { label: '통상시급 (원)', placeholder: '예: 15000' },
         { label: '연장근로 시간 (시간)', placeholder: '예: 10' },
@@ -2013,7 +2013,7 @@ export function NightPayWidget() {
     <PlaceholderCalcWidget
       emoji="🌙"
       title="야간수당 계산기"
-      hint="22시~06시 야간 가산 50% 등 법정 가산을 반영한 추정치를 준비 중입니다."
+      hint="22시~06시 야간 가산 50% 등 법정 가산을 반영한 추정치를 추가 예정입니다."
       fields={[
         { label: '통상시급 (원)', placeholder: '예: 12000' },
         { label: '야간 근로 시간 (시간)', placeholder: '예: 20' }
@@ -2027,7 +2027,7 @@ export function IncomeTaxWidget() {
     <PlaceholderCalcWidget
       emoji="🧾"
       title="종합소득세 계산기"
-      hint="과세표준·세율 누진·세액공제를 반영한 확정신고 추정 모델을 준비 중입니다."
+      hint="과세표준·세율 누진·세액공제를 반영한 확정신고 추정 모델을 추가 예정입니다."
       fields={[
         { label: '종합소득금액 (만원)', placeholder: '예: 4500' },
         { label: '인적·연금·특별공제 합산 (만원)', placeholder: '예: 800' }
@@ -2041,7 +2041,7 @@ export function InheritanceWidget() {
     <PlaceholderCalcWidget
       emoji="🏛️"
       title="상속세 계산기"
-      hint="공제·과세가액·누진세율을 반영한 상속세 추정을 준비 중입니다."
+      hint="공제·과세가액·누진세율을 반영한 상속세 추정을 추가 예정입니다."
       fields={[
         { label: '순재산가액 (억 원)', placeholder: '예: 12' },
         { label: '상속인 수·공제 유형', placeholder: '예: 배우자 1, 자녀 2' }
@@ -2055,7 +2055,7 @@ export function JeonwolseWidget() {
     <PlaceholderCalcWidget
       emoji="🔑"
       title="전월세전환 계산기"
-      hint="전환율·보증금·월세 상호 환산 시나리오를 준비 중입니다."
+      hint="전환율·보증금·월세 상호 환산 시나리오를 추가 예정입니다."
       fields={[
         { label: '전세 보증금 (만원)', placeholder: '예: 20000' },
         { label: '월세 (만원)', placeholder: '예: 80' },
@@ -2070,7 +2070,7 @@ export function DsrDtiWidget() {
     <PlaceholderCalcWidget
       emoji="📊"
       title="DSR DTI 계산기"
-      hint="연 소득·기존·신규 원리금 상환액으로 DSR·DTI를 추정하는 모델을 준비 중입니다."
+      hint="연 소득·기존·신규 원리금 상환액으로 DSR·DTI를 추정하는 모델을 추가 예정입니다."
       fields={[
         { label: '연 소득 (만원)', placeholder: '예: 6000' },
         { label: '기존 연 원리금 상환 (만원)', placeholder: '예: 600' },
@@ -2085,7 +2085,7 @@ export function YearEndTaxWidget() {
     <PlaceholderCalcWidget
       emoji="🔖"
       title="연말정산 환급액 계산기"
-      hint="근로소득·원천징수·세액공제를 반영한 환급·추가납부 추정을 준비 중입니다."
+      hint="근로소득·원천징수·세액공제를 반영한 환급·추가납부 추정을 추가 예정입니다."
       fields={[
         { label: '연간 총 급여 (만원)', placeholder: '예: 4800' },
         { label: '원천징수 세액 (만원)', placeholder: '예: 180' },
@@ -2100,7 +2100,7 @@ export function RentalTaxWidget() {
     <PlaceholderCalcWidget
       emoji="🏠"
       title="임대소득세 계산기"
-      hint="필요경비·기준경비·과세 방식별 임대소득 추정을 준비 중입니다."
+      hint="필요경비·기준경비·과세 방식별 임대소득 추정을 추가 예정입니다."
       fields={[
         { label: '연 임대 수입 (만원)', placeholder: '예: 2400' },
         { label: '실제 필요경비 (만원)', placeholder: '예: 400' }
@@ -2114,7 +2114,7 @@ export function CarTaxWidget() {
     <PlaceholderCalcWidget
       emoji="🚗"
       title="자동차세 계산기"
-      hint="배기량·차종·감면 여부를 반영한 지방세 자동차세 추정을 준비 중입니다."
+      hint="배기량·차종·감면 여부를 반영한 지방세 자동차세 추정을 추가 예정입니다."
       fields={[
         { label: '배기량 (cc)', placeholder: '예: 1999' },
         { label: '차종 (승용·승합·화물 등)', placeholder: '예: 승용 비영업' }
@@ -2128,7 +2128,7 @@ export function SavingsWidget() {
     <PlaceholderCalcWidget
       emoji="💵"
       title="적금이자 계산기"
-      hint="적립액·금리 방식(단리·복리)·만기에 따른 수령액 추정을 준비 중입니다."
+      hint="적립액·금리 방식(단리·복리)·만기에 따른 수령액 추정을 추가 예정입니다."
       fields={[
         { label: '월 납입액 (만원)', placeholder: '예: 50' },
         { label: '연이율 (%)', placeholder: '예: 3.5' },
@@ -2143,7 +2143,7 @@ export function StockReturnWidget() {
     <PlaceholderCalcWidget
       emoji="📈"
       title="주식수익률 계산기"
-      hint="매수·매도·수수료·세금을 반영한 실현 손익·수익률을 준비 중입니다."
+      hint="매수·매도·수수료·세금을 반영한 실현 손익·수익률을 추가 예정입니다."
       fields={[
         { label: '매수 단가 (원)', placeholder: '예: 50000' },
         { label: '수량 (주)', placeholder: '예: 100' },
@@ -2158,7 +2158,7 @@ export function MaternityWidget() {
     <PlaceholderCalcWidget
       emoji="👶"
       title="출산휴가급여 계산기"
-      hint="고용보험 출산전후휴가급여 일액·일수를 반영한 추정을 준비 중입니다."
+      hint="고용보험 출산전후휴가급여 일액·일수를 반영한 추정을 추가 예정입니다."
       fields={[
         { label: '통상임금 기준 일 급여 (원)', placeholder: '고시 상한 적용 전' },
         { label: '출산전후휴가 일수', placeholder: '예: 90' }
@@ -2172,7 +2172,7 @@ export function ParentalLeaveWidget() {
     <PlaceholderCalcWidget
       emoji="🧸"
       title="육아휴직급여 계산기"
-      hint="육아휴직 급여 구간별 비율·상한을 반영한 월별 추정을 준비 중입니다."
+      hint="육아휴직 급여 구간별 비율·상한을 반영한 월별 추정을 추가 예정입니다."
       fields={[
         { label: '휴직 전 월 평균임금 (원)', placeholder: '예: 3500000' },
         { label: '육아휴직 개월 수', placeholder: '예: 12' }
@@ -2186,7 +2186,7 @@ export function LoanInterestWidget() {
     <PlaceholderCalcWidget
       emoji="🏦"
       title="대출이자 계산기"
-      hint="원리금균등·원금균등·만기일시 등 상환 방식별 상환표 추정을 준비 중입니다."
+      hint="원리금균등·원금균등·만기일시 등 상환 방식별 상환표 추정을 추가 예정입니다."
       fields={[
         { label: '대출 원금 (만원)', placeholder: '예: 10000' },
         { label: '연이율 (%)', placeholder: '예: 4.2' },
@@ -2201,7 +2201,7 @@ export function HealthInsuranceWidget() {
     <PlaceholderCalcWidget
       emoji="🏥"
       title="건강보험료 계산기"
-      hint="보수월액·요율·장기요양 연동 산정을 준비 중입니다."
+      hint="보수월액·요율·장기요양 연동 산정을 추가 예정입니다."
       fields={[
         { label: '월 보수월액 (만원)', placeholder: '예: 350' },
         { label: '가입 유형', placeholder: '직장 / 지역' }
@@ -2215,7 +2215,7 @@ export function PensionWidget() {
     <PlaceholderCalcWidget
       emoji="🧓"
       title="국민연금 수령액 계산기"
-      hint="가입기간·평균소득월액·수령 시기별 연금액 추정을 준비 중입니다."
+      hint="가입기간·평균소득월액·수령 시기별 연금액 추정을 추가 예정입니다."
       fields={[
         { label: '총 가입 기간 (월)', placeholder: '예: 360' },
         { label: '평균소득월액 추정 (만원)', placeholder: '예: 400' }
@@ -2229,7 +2229,7 @@ export function EmploymentInsuranceWidget() {
     <PlaceholderCalcWidget
       emoji="🛡️"
       title="고용보험료 계산기"
-      hint="실업·고안·능개 요율을 반영한 보험료 추정을 준비 중입니다."
+      hint="실업·고안·능개 요율을 반영한 보험료 추정을 추가 예정입니다."
       fields={[
         { label: '월 보수월액 (만원)', placeholder: '예: 300' },
         { label: '사업장 유형', placeholder: '일반 / 우선지원 등' }
@@ -2243,7 +2243,7 @@ export function MinimumWageWidget() {
     <PlaceholderCalcWidget
       emoji="💵"
       title="최저시급 월급 계산기"
-      hint="2026년 시급·월 환산근로시간·주휴 포함 시나리오를 준비 중입니다."
+      hint="2026년 시급·월 환산근로시간·주휴 포함 시나리오를 추가 예정입니다."
       fields={[
         { label: '주 근로시간 (시간)', placeholder: '예: 40' },
         { label: '시급 (원)', placeholder: '예: 10320' }
@@ -2257,7 +2257,7 @@ export function AnnualLeaveWidget() {
     <PlaceholderCalcWidget
       emoji="🏖️"
       title="연차수당 계산기"
-      hint="미사용 연차 일수·통상임금 기반 수당 추정을 준비 중입니다."
+      hint="미사용 연차 일수·통상임금 기반 수당 추정을 추가 예정입니다."
       fields={[
         { label: '미사용 연차 (일)', placeholder: '예: 8' },
         { label: '1일 통상임금 (원)', placeholder: '예: 150000' }
@@ -2271,7 +2271,7 @@ export function AlimonyWidget() {
     <PlaceholderCalcWidget
       emoji="⚖️"
       title="양육비 계산기"
-      hint="기준표·소득·자녀 연령을 반영한 참고액 산출을 준비 중입니다."
+      hint="기준표·소득·자녀 연령을 반영한 참고액 산출을 추가 예정입니다."
       fields={[
         { label: '부모 연 소득 합 (만원)', placeholder: '예: 8000' },
         { label: '자녀 연령', placeholder: '예: 7' }
@@ -2285,7 +2285,7 @@ export function ChildAllowanceWidget() {
     <PlaceholderCalcWidget
       emoji="👨‍👩‍👧"
       title="아동수당 계산기"
-      hint="지급 조건·가산·소득 상한을 반영한 예상액 산출을 준비 중입니다."
+      hint="지급 조건·가산·소득 상한을 반영한 예상액 산출을 추가 예정입니다."
       fields={[
         { label: '자녀 수', placeholder: '예: 2' },
         { label: '가구 소득 구간 (만원)', placeholder: '예: 5000' }
@@ -2299,7 +2299,7 @@ export function NewbornSubsidyWidget() {
     <PlaceholderCalcWidget
       emoji="🎁"
       title="출산지원금 계산기"
-      hint="첫만남이용권·지역 출산지원 등 합산 추정을 준비 중입니다."
+      hint="첫만남이용권·지역 출산지원 등 합산 추정을 추가 예정입니다."
       fields={[
         { label: '출생 순위 (첫째/둘째…)', placeholder: '예: 첫째' },
         { label: '거주 지역 (시·도)', placeholder: '예: 서울' }
@@ -2313,7 +2313,7 @@ export function MortgageWidget() {
     <PlaceholderCalcWidget
       emoji="🏘️"
       title="주택담보대출 계산기"
-      hint="LTV·금리·상환 방식·거치를 반영한 상환표 추정을 준비 중입니다."
+      hint="LTV·금리·상환 방식·거치를 반영한 상환표 추정을 추가 예정입니다."
       fields={[
         { label: '대출 원금 (만원)', placeholder: '예: 30000' },
         { label: '연이율 (%)', placeholder: '예: 4.5' },
@@ -2328,7 +2328,7 @@ export function CreditLoanWidget() {
     <PlaceholderCalcWidget
       emoji="💳"
       title="신용대출 이자 계산기"
-      hint="한도·금리·인출액 기반 월 이자 추정을 준비 중입니다."
+      hint="한도·금리·인출액 기반 월 이자 추정을 추가 예정입니다."
       fields={[
         { label: '평균 인출 잔액 (만원)', placeholder: '예: 1000' },
         { label: '약정 금리 (연 %)', placeholder: '예: 6.5' }
@@ -2342,7 +2342,7 @@ export function LeaseDepositWidget() {
     <PlaceholderCalcWidget
       emoji="🔐"
       title="전세보증금 반환 계산기"
-      hint="만기일·지연이자·반환 순위를 반영한 추정을 준비 중입니다."
+      hint="만기일·지연이자·반환 순위를 반영한 추정을 추가 예정입니다."
       fields={[
         { label: '전세 보증금 (만원)', placeholder: '예: 20000' },
         { label: '연 지연이자율 (%)', placeholder: '예: 6' }
@@ -2356,7 +2356,7 @@ export function PropertyTaxWidget() {
     <PlaceholderCalcWidget
       emoji="🏡"
       title="재산세 계산기"
-      hint="과세표준·세율·감면을 반영한 지방 재산세 추정을 준비 중입니다."
+      hint="과세표준·세율·감면을 반영한 지방 재산세 추정을 추가 예정입니다."
       fields={[
         { label: '공시지가 합산 (만원)', placeholder: '예: 60000' },
         { label: '부동산 유형', placeholder: '주택 / 토지 / 건물' }
@@ -2370,7 +2370,7 @@ export function ComprehensivePropertyWidget() {
     <PlaceholderCalcWidget
       emoji="🏛️"
       title="종합부동산세 계산기"
-      hint="공정시장가액·공제·누진·할증을 반영한 종부세 추정을 준비 중입니다."
+      hint="공정시장가액·공제·누진·할증을 반영한 종부세 추정을 추가 예정입니다."
       fields={[
         { label: '1세대 공제 전 과세 기준액 (억)', placeholder: '예: 12' },
         { label: '보유 주택 수', placeholder: '예: 2' }
@@ -2384,7 +2384,7 @@ export function LocalIncomeTaxWidget() {
     <PlaceholderCalcWidget
       emoji="🏢"
       title="지방소득세 계산기"
-      hint="국세 산출세액 연동·분리과세 유형별 산출을 준비 중입니다."
+      hint="국세 산출세액 연동·분리과세 유형별 산출을 추가 예정입니다."
       fields={[
         { label: '과세 대상 소득세 산출세액 (만원)', placeholder: '예: 500' },
         { label: '소득 유형', placeholder: '근로 / 사업 / 퇴직 등' }
@@ -2398,7 +2398,7 @@ export function StampTaxWidget() {
     <PlaceholderCalcWidget
       emoji="📜"
       title="인지세 계산기"
-      hint="증서 종류·과세표준 구간별 세액 산출을 준비 중입니다."
+      hint="증서 종류·과세표준 구간별 세액 산출을 추가 예정입니다."
       fields={[
         { label: '증서 유형', placeholder: '예: 매매·증여·금전소비대차' },
         { label: '과세표준 금액 (만원)', placeholder: '예: 50000' }
@@ -2412,7 +2412,7 @@ export function AgeCalculatorWidget() {
     <PlaceholderCalcWidget
       emoji="🎂"
       title="만나이 계산기"
-      hint="출생일·기준일에 따른 만·세는·연 나이 표기를 준비 중입니다."
+      hint="출생일·기준일에 따른 만·세는·연 나이 표기를 추가 예정입니다."
       fields={[
         { label: '생년월일', placeholder: 'YYYY-MM-DD' },
         { label: '기준일', placeholder: 'YYYY-MM-DD' }
@@ -2426,7 +2426,7 @@ export function DateCalculatorWidget() {
     <PlaceholderCalcWidget
       emoji="📅"
       title="날짜 계산기 (D-Day)"
-      hint="기간 차이·D-Day·영업일 옵션을 준비 중입니다."
+      hint="기간 차이·D-Day·영업일 옵션을 추가 예정입니다."
       fields={[
         { label: '시작일', placeholder: 'YYYY-MM-DD' },
         { label: '종료일', placeholder: 'YYYY-MM-DD' }

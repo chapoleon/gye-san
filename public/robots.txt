@@ -1,5 +1,15 @@
 User-agent: *
 Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+Disallow: /api/
+Disallow: /_next/
+
 Sitemap: https://gye-san.com/sitemap.xml
 
 # Daum 웹마스터 도구 인증

@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import SiteFooter from '@/components/SiteFooter'
-import AdSense from '@/components/AdSense'
 import { calculators } from '@/lib/calculators'
+import { isPlaceholderSlug } from '@/lib/site'
 
 const url = 'https://gye-san.com/calculators/'
 const title = '전체 계산기 목록 | 계산닷컴'
 const desc =
-  '퇴직금·실수령액·세금·부동산·금융·생활 등 gye-san.com에서 제공하는 무료 온라인 계산기를 한곳에서 찾아보세요.'
+  '실수령액, 퇴직금, 4대보험, 부가세, 시급, 전역일 등 계산닷컴에서 제공하는 계산기를 카테고리별로 찾아보세요.'
 
 export default function CalculatorsIndexPage() {
   const sorted = [...calculators].sort((a, b) => String(a.name).localeCompare(String(b.name), 'ko'))
@@ -50,7 +50,6 @@ export default function CalculatorsIndexPage() {
           ))}
         </div>
 
-        <AdSense slot="1111111111" format="horizontal" />
         <SiteFooter />
       </main>
     </>

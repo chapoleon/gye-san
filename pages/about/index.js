@@ -34,9 +34,15 @@ export default function AboutPage() {
 
         <article className="card" style={{ marginBottom: 24 }}>
           <p style={{ color: 'var(--t2)', fontSize: '0.95rem', lineHeight: 1.9, marginBottom: 18 }}>
-            계산닷컴(gye-san.com)은 일상생활에 필요한 다양한 계산기를 무료로 제공하는 온라인 도구 사이트입니다. 연봉 실수령액, 시급 계산, 전역일 계산
-            등 누구나 쉽게 사용할 수 있는 정확한 계산기를 만들고 있습니다. 방문자분께서 복잡한 세법이나 급여 규정을 일일이 찾아보지 않아도 대표적인
-            가정과 공식을 바탕으로 빠르게 결과를 확인하실 수 있도록 화면을 구성하였습니다.
+            계산닷컴(gye-san.com)은 일상생활에 필요한 급여·세금·금융·생활 계산을 웹에서 바로 할 수 있게 돕는 도구 사이트입니다. 연봉 실수령액, 시급,
+            퇴직금, 4대보험, 부가세 등 자주 찾는 주제를 한곳에 모았습니다. 복잡한 규정 전문을 읽기 어려울 때 대표적인 가정과 공식으로 빠르게
+            결과를 확인할 수 있도록 구성했습니다.
+          </p>
+          <p style={{ color: 'var(--t2)', fontSize: '0.95rem', lineHeight: 1.9, marginBottom: 18 }}>
+            <strong>운영 원칙:</strong> (1) <strong>단순함</strong> — 필요한 입력만 받고 결과를 바로 보여 드립니다. (2){' '}
+            <strong>정확성</strong> — 공개된 요율·한도를 반영하되, 예외 규정은 단순화될 수 있음을 안내합니다. (3) <strong>접근성</strong> —
+            회원가입 없이 모바일·PC에서 이용 가능합니다. (4) <strong>참고용 결과</strong> — 법적·세무적 확정이 아닌 추정치임을 명확히
+            표시합니다.
           </p>
           <p style={{ color: 'var(--t2)', fontSize: '0.95rem', lineHeight: 1.9, marginBottom: 18 }}>
             본 서비스는 급여·세금·부동산·금융·생활·출산육아·보험 등 폭넓은 주제의 계산기를 한곳에 모아, 검색과 이동의 번거로움을 줄이는 것을 목표로
@@ -59,6 +65,9 @@ export default function AboutPage() {
             </Link>
             <Link className="btn btn-ghost" href="/privacy/">
               개인정보처리방침
+            </Link>
+            <Link className="btn btn-ghost" href="/disclaimer/">
+              면책 안내
             </Link>
             <Link className="btn btn-ghost" href="/">
               홈으로

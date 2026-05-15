@@ -1,9 +1,22 @@
 'use client'
 
 import { WIDGET_BY_FORMULA_TYPE } from '@/components/calculator-widgets'
+import {
+  WeeklyHolidayWidget,
+  IncomeTaxWidget,
+  LoanInterestWidget,
+  AnnualLeaveWidget
+} from '@/components/widgets-core'
+
+const CORE_WIDGETS = {
+  'weekly-holiday': WeeklyHolidayWidget,
+  'income-tax': IncomeTaxWidget,
+  'loan-interest': LoanInterestWidget,
+  'annual-leave': AnnualLeaveWidget
+}
 
 export default function CalculatorBody({ formulaType }) {
-  const W = WIDGET_BY_FORMULA_TYPE[formulaType]
+  const W = CORE_WIDGETS[formulaType] || WIDGET_BY_FORMULA_TYPE[formulaType]
   if (!W) {
     return (
       <main className="card ani d2">

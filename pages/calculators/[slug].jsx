@@ -3,25 +3,32 @@ import Link from 'next/link'
 import CalculatorBody from '@/components/CalculatorBody'
 import FaqSection from '@/components/FaqSection'
 import SiteFooter from '@/components/SiteFooter'
-import AdSense from '@/components/AdSense'
+import CalculatorGuide from '@/components/CalculatorGuide'
 import CalculatorSeoArticle from '@/components/CalculatorSeoArticle'
 import { shouldAppendSeoArticle } from '@/lib/getCalculatorSeoSections'
-// import ProductBanner from '@/components/ProductBanner' // AdSense 승인 전 비활성화
+import { getCalculatorContent } from '@/lib/calculatorContent'
 import {
   getAllSlugs,
   getCalculatorBySlug,
   getRelatedCalculators,
   metaDescription,
-  pageTitle
+  pageTitle,
+  shouldNoindexCalculator
 } from '@/lib/calculators'
 import { breadcrumbJsonLd, faqPageJsonLd, webApplicationJsonLd } from '@/lib/schema'
+import { isPlaceholderSlug } from '@/lib/site'
 
 export default function CalculatorPage({ calc, related }) {
   const path = `/calculators/${calc.slug}/`
   const url = `https://gye-san.com${path}`
-  const desc = metaDescription(calc.description)
-  const title = pageTitle(calc.name)
-  const faqLd = faqPageJsonLd(calc.faq)
+  const desc = metaDescription(calc.description, calc.slug)
+  const title = pageTitle(calc.name, calc.slug)
+  const noindex = shouldNoindexCalculator(calc.slug)
+  const guide = getCalculatorContent(calc.slug)
+  const faqForLd = guide
+    ? [...(calc.faq || []), ...(guide.extraFaq || [])]
+    : calc.faq
+  const faqLd = faqPageJsonLd(faqForLd)
   const webApp = webApplicationJsonLd({
     name: calc.name,
     description: calc.description.replace(/\s+/g, ' ').trim(),
@@ -35,6 +42,7 @@ export default function CalculatorPage({ calc, related }) {
         <title>{title}</title>
         <meta name="description" content={desc} />
         <link rel="canonical" href={url} />
+        {noindex ? <meta name="robots" content="noindex, follow" /> : null}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={desc} />
@@ -50,24 +58,23 @@ export default function CalculatorPage({ calc, related }) {
         <header className="ani">
           <div className="badge">
             <span className="dot" />
-            gye-san.com · 무료 온라인 도구
+            {calc.pillar}
           </div>
           <h1>
             <span className="ac">{calc.name}</span>
           </h1>
-          <p className="geo-lead">
-            <strong>{calc.description}</strong>
-          </p>
+          <p className="geo-lead">{calc.description}</p>
         </header>
         <article>
-          <AdSense slot="1111111111" format="horizontal" />
+          {isPlaceholderSlug(calc.slug) ? (
+            <p className="placeholder-notice" role="status">
+              이 계산기는 산식 연동 작업 중입니다. 아래 입력 UI는 참고용이며, 관련 계산기 링크를 이용해 주세요.
+            </p>
+          ) : null}
           <CalculatorBody formulaType={calc.formula_type} />
-          {/* AdSense 승인 전: 제휴 스토어 배너 비활성화 (승인 후 주석 해제)
-          <ProductBanner banner={calc.banner} />
-          */}
-          <AdSense slot="2222222222" />
           <FaqSection items={calc.faq} />
-          {shouldAppendSeoArticle(calc) ? <CalculatorSeoArticle calc={calc} /> : null}
+          {guide ? <CalculatorGuide calc={calc} content={guide} /> : null}
+          {!guide && shouldAppendSeoArticle(calc) ? <CalculatorSeoArticle calc={calc} /> : null}
         </article>
         {related.length > 0 ? (
           <div className="rel">
@@ -82,10 +89,13 @@ export default function CalculatorPage({ calc, related }) {
             </div>
           </div>
         ) : null}
+        <p className="calc-disclaimer">
+          위 결과는 참고용 추정치입니다. 실제 금액·세액·일정은 법령 개정, 회사 규정, 계약 조건에 따라 달라질 수 있습니다.{' '}
+          <Link href="/disclaimer/">면책 안내</Link>
+        </p>
         <div className="cta-bottom">
-          <Link href="/">💡 더 많은 무료 계산기는 계산닷컴에서</Link>
+          <Link href="/calculators/">전체 계산기 보기</Link>
         </div>
-        <AdSense slot="3333333333" />
         <SiteFooter />
       </main>
     </>
