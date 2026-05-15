@@ -29,6 +29,13 @@ for (let i = 0; i < max; i++) {
       console.error('generate-sitemaps.mjs failed')
       process.exit(g.status ?? 1)
     }
+    const v = spawnSync(process.execPath, [path.join(__dirname, 'verify-redirects.mjs')], {
+      stdio: 'inherit',
+      cwd: root
+    })
+    if (v.status !== 0) {
+      process.exit(v.status ?? 1)
+    }
     process.exit(0)
   }
   console.warn(`build attempt ${i + 1}/${max} failed (Windows EBUSY 등으로 재시도)`)
