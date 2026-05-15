@@ -8,7 +8,6 @@ User-agent: AdsBot-Google
 Allow: /
 
 Disallow: /api/
-Disallow: /_next/
 
 Sitemap: https://gye-san.com/sitemap.xml
 

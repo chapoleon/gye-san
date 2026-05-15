@@ -58,7 +58,7 @@ Publisher ID: `pub-5440243063519453`
 
 ### robots.txt
 - Googlebot, AdsBot-Google 허용
-- `Disallow: /api/`, `/_next/`
+- `Disallow: /api/` (`/_next/` 차단 제거 — JS/CSS 렌더링 허용)
 - `Sitemap: https://gye-san.com/sitemap.xml` (한 줄, sitemap-index 미참조)
 
 ### sitemap.xml 수정 (2026-05-15 추가 작업)
@@ -84,7 +84,7 @@ Publisher ID: `pub-5440243063519453`
 - `/`, `/about/`, `/contact/`, `/privacy/`, `/terms/`, `/disclaimer/`, `/guides/`
 - `/calculators/salary/`, `/calculators/severance/`, `/calculators/hourly/`, `/calculators/weekly-holiday/`, `/calculators/vat/`, `/calculators/compound/`, `/calculators/loan-interest/`
 
-**제외:** placeholder 계산기, `/guides/ads-txt/`, API, `_next`, 존재하지 않는 slug
+**제외:** placeholder 계산기, `/guides/ads-txt/`, `/api/`, 존재하지 않는 slug
 
 ---
 
