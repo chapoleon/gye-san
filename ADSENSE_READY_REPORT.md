@@ -13,7 +13,7 @@ Publisher ID: `pub-5440243063519453`
 - `pages/_app.js` — WebSite JSON-LD, AdSense 중복 제거
 - `public/ads.txt`
 - `public/robots.txt`
-- `scripts/generate-sitemaps.mjs`
+- `scripts/generate-sitemaps.mjs`, `lib/sitemap-urls.mjs`, `public/sitemap.xml`
 - `public/_redirects` — `/disclaimer/` 리다이렉트
 - `lib/site.js`, `lib/schema.js`, `lib/calculators.js`, `lib/getCalculatorSeoSections.js`
 - `lib/calculatorContent.js`, `lib/loanCalc.js`, `lib/taxCalc.js`
@@ -59,12 +59,32 @@ Publisher ID: `pub-5440243063519453`
 ### robots.txt
 - Googlebot, AdsBot-Google 허용
 - `Disallow: /api/`, `/_next/`
-- `Sitemap: https://gye-san.com/sitemap.xml`
+- `Sitemap: https://gye-san.com/sitemap.xml` (한 줄, sitemap-index 미참조)
 
-### sitemap.xml (빌드 시 `out/sitemap.xml` 생성, 30 URL)
-- 홈, `/calculators/`, `/guides/`, 신뢰 페이지 5종
-- **동작하는 계산기 22종** (placeholder 26종 제외)
-- 제외: `guides/ads-txt`, 블로그, placeholder 계산기, `sitemap-blog.xml` 통합 제거
+### sitemap.xml 수정 (2026-05-15 추가 작업)
+
+**원인:** `public/_redirects` 1행이 `/sitemap.xml` → `/sitemap-index.xml` 301 리다이렉트를 걸어, 존재하지 않는 `sitemap-index.xml`로 보내 404가 발생했습니다.
+
+**조치:**
+- `public/_redirects`에서 해당 리다이렉트 **삭제**
+- **Pages Router + `output: 'export'`** — `app/sitemap.ts` 미사용
+- URL 목록 단일 소스: `lib/sitemap-urls.mjs`
+- `public/sitemap.xml` 정적 파일 + 빌드 후 `out/sitemap.xml` 동기화 (`generate-sitemaps.mjs`)
+- `public/_headers`에 `/sitemap.xml` → `application/xml` Content-Type 추가
+- `sitemap-index.xml` / `sitemap-blog.xml` 참조 코드 **전부 제거**
+
+**포함 URL (14개, 실제 slug 기준):**
+
+| 요청 예시 slug | 실제 라우트 |
+|----------------|-------------|
+| hourly-wage | `/calculators/hourly/` |
+| weekly-holiday-pay | `/calculators/weekly-holiday/` |
+| compound-interest | `/calculators/compound/` |
+
+- `/`, `/about/`, `/contact/`, `/privacy/`, `/terms/`, `/disclaimer/`, `/guides/`
+- `/calculators/salary/`, `/calculators/severance/`, `/calculators/hourly/`, `/calculators/weekly-holiday/`, `/calculators/vat/`, `/calculators/compound/`, `/calculators/loan-interest/`
+
+**제외:** placeholder 계산기, `/guides/ads-txt/`, API, `_next`, 존재하지 않는 slug
 
 ---
 
@@ -159,7 +179,7 @@ Publisher ID: `pub-5440243063519453`
 ## 빌드 검증
 
 - `npm run lint` — 통과
-- `npm run build` — 통과 (sitemap 30 URL)
+- `npm run build` — 통과 (sitemap **14 URL**, `public/`·`out/` 동기화)
 
 ---
 
